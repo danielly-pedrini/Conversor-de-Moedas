@@ -1,4 +1,4 @@
-// Mapeamento correto dos elementos
+// Mapeamento dos elementos
 const converteDe = document.querySelector("#from-currency");
 const convertePara = document.querySelector("#to-currency");
 const converterValor = document.querySelector("#valor-a-converter");
@@ -7,10 +7,10 @@ const valorConvertido = document.querySelector("#valor-convertido");
 
 // Valores das moedas em relação ao Real (BRL)
 const valueCoinsToday = {
-    'BRL': 1.00,    // Real (base)
-    'USD': 0.20,    // 1 Real = 0.20 Dólar (ou 1 Dólar = 5.00 Reais)
-    'EUR': 0.17,    // 1 Real = 0.17 Euro (ou 1 Euro = 6.00 Reais)
-    'GBP': 0.14     // 1 Real = 0.14 Libra (ou 1 Libra = 7.00 Reais)
+    'BRL': 1.00,   
+    'USD': 5.00,    
+    'EUR': 6.00,   
+    'GBP': 7.00   
 };
 
 function convertCurrency() {
@@ -23,13 +23,8 @@ function convertCurrency() {
         return;
     }
 
-    // Converter para BRL primeiro (como moeda base) e depois para a moeda desejada
-    const valueInBRL = fromCurrency === 'BRL' ? 
-        valueCurrency : 
-        valueCurrency / valueCoinsToday[fromCurrency] * valueCoinsToday['BRL'];
-    
-    // Converter de BRL para a moeda de destino
-    const result = valueInBRL * (1 / valueCoinsToday[toCurrency]);
+    // Fórmula corrigida: multiplica pelo valor da moeda de origem e divide pelo valor da moeda de destino
+    const result = (valueCurrency * valueCoinsToday[fromCurrency]) / valueCoinsToday[toCurrency];
     
     // Formatação do resultado com símbolo da moeda
     const currencySymbols = {
