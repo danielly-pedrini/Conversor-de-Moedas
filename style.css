@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background: #fdfbfb;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #00ffd5;
+    font-size: 40px;
+    margin: 10px;
+}
+img{
+width: 100px;
+}
+
+.converter-container {
+
+    background-color: #000000;
+    width: 20%;
+    height: 60%;
+    min-width: 320px;
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 10px;
+    padding: 0;
+    justify-content: center;
+    border: 5px solid #00ffd5;
+    border-radius: 20px;
+
+}
+
+.main {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    background-color: #000000;
+    border-radius: 20px;
+
+}
+
+p {
+    color: #00ffd5;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+input {
+    text-align: center;
+    height: 30px;
+    width: 200px;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid #00ffd5;
+    background-color: #0b0b0b;
+    color: #00ffd5;
+    margin: 5px;
+    padding: 0 10px;
+}
+
+
+select {
+    text-align: center;
+    height: 30px;
+    width: 200px;
+    outline: none;
+    background-color: #0b0b0b;
+    color: #00ffd5;
+    border-radius: 10px;
+    border: 2px solid #00ffd5;
+    margin: 10px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #0b0b0b;
+    color: #00ffd5;
+    border: 2px solid #40e0d0;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #40e0d0;
+    color: #0b0b0b;
+}
+
+/* Media queries para melhorar a responsividade */
+@media (max-width: 768px) {
+    .converter-container {
+        width: 90%; /* Aumenta a largura da área de conversão em telas médias */
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    img {
+        width: 120px; /* Ajuste a largura das imagens em telas pequenas */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem; /* Ajuste para telas muito pequenas */
+    }
+
+    input,
+    select,
+    button {
+        width: 100%; /* Certifique-se de que os campos ocupem 100% da largura em telas pequenas */
+        height: 40px; /* Ajuste de altura para campos de entrada */
+    }
+
+    .converter-container {
+        width: 95%; /* Torna o container ainda mais largo em telas muito pequenas */
+    }
+}
